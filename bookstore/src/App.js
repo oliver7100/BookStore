@@ -29,46 +29,36 @@ function App() {
 
 
 
-  const bookRenderer = books.map((book) =>(
+  const bookRenderer = books.map((book) =>( 
 
 
     <>
-<div className="book-container">
+    
+
     <div className="book">
       <div className="book-info">
-      <h3>{book.title}</h3>  
+      <h3 key={book.id} >{book.title}</h3>  
       </div>
 
     <div>
-    <img src={book.imageCover} alt="img" ></img>
+    <img key={book.id} src={book.imageCover} alt="img" ></img>
     </div>
     <div className="book-over">
             <h2>Handling  </h2>
-            <p>{book.description}</p>
+            <p key={book.id}>{book.description}</p>
         </div>
     </div>   
-    </div>
+ 
     </>
-  ))
-      
-
+  ))    
 
     return (
       <>      
 
-
-      <div>{bookRenderer}</div>
-
-
-        {/*}
-       <div>
-       <pre>{JSON.stringify(books, null, 2)} </pre>
-       </div>
-         
-
-    {*/}
-     
-
+<div className="book-container">
+   
+   {books.length > 0 && books.map((book) =>
+   <Book key={book.id} {...book} />)} </div>
 
      </>
       );
