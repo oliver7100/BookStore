@@ -7,15 +7,13 @@ var URL = "/Books";
 
 function App() {
   const [books, setBooks] = useState([]);
-
   
 
   useEffect(()  => {
     getBooks(URL)
   }, []);
   
-  const getBooks = (API) =>{ 
-  
+  const getBooks = (API) =>{   
     
 
     fetch(API)
@@ -27,33 +25,8 @@ function App() {
   }
        
 
-
-
-  const bookRenderer = books.map((book) =>( 
-
-
-    <>
-    
-
-    <div className="book">
-      <div className="book-info">
-      <h3 key={book.id} >{book.title}</h3>  
-      </div>
-
-    <div>
-    <img key={book.id} src={book.imageCover} alt="img" ></img>
-    </div>
-    <div className="book-over">
-            <h2>Handling  </h2>
-            <p key={book.id}>{book.description}</p>
-        </div>
-    </div>   
- 
-    </>
-  ))    
-
     return (
-      <>      
+      <>          
 
 <div className="book-container">
    
@@ -65,7 +38,3 @@ function App() {
     }
     
     export default App;
-    
-
-
-   
