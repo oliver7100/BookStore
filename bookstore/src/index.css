@@ -1,8 +1,9 @@
 body {
-  background-color: #363636;
+  background-color: white;
   color: white;
-  font-family: Sans-serif;
+  font-family: arial;
   margin: 0;
+  
 
 
   }
@@ -15,18 +16,26 @@ code {
 
 
 
+button  {
+  margin-left: 10px;
+}
+
+
 .book{
-  background-color: gray;
+  background-color: rgb(214, 214, 214);
   width: 235px;
   margin: 1rem;    
   border-radius: 3px;
   box-shadow: 3px, 3px, 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   position: relative;
-  
+
 
 }
 
+.book h3{
+  color: black;
+}
 
 
 .book img{
@@ -58,7 +67,7 @@ code {
 
 
 .book-over{
-  color: black;
+  color: #22254b;
   padding: 1rem;
   position: absolute;
   bottom: 0;
@@ -68,12 +77,10 @@ code {
   max-height: 100%;
   transform: translateY(102%);
   transition: transform 0.3s ease-in-out;
+  overflow: auto;
 }
 
 
 .book:hover .book-over{
   transform: translateY(0%);
 }
-
-
-

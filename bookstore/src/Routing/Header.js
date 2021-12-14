@@ -1,8 +1,0 @@
-function headerRoute()
-{
-
-    
-
-}
-
-return headerRoute;
