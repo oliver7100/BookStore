@@ -1,10 +1,9 @@
 import React, { useEffect, useState} from "react";
 import Book from './Components/Book'
 import './index.css';
+import Slides from './Components/Slides'
 import Header from './Components/Header'
 import 'react-slideshow-image/dist/styles.css';
-
-
 
 var URL = "/Books";
 
@@ -32,25 +31,16 @@ function App() {
 
     });
   }
-       
-
-  
-
-
-
-
 
     return (
       <>          
 
 
-
-
     <Header></Header>
-
 {/*}
-<Slides></Slides>
-    {*/}
+
+    <Slides></Slides>
+    {*/} 
 
 
 

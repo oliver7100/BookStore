@@ -10,9 +10,6 @@ const Slides = () => {
   .then(response => response.json())
   .then(data => setBooks(data));
 
-
-
-
   const style = {
     textAlign: 'center',
     background: 'teal',
@@ -35,21 +32,11 @@ const Slides = () => {
 <>
 
 
-
-
-
     <div>
       <div>
-        <Slide {...properties}>
-
-          
-           
+        <Slide {...properties}>          
           
          <div style={style}>
-
-      
-  
-         
 
          </div>
           <div style={style}>Second Slide</div>
