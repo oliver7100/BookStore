@@ -84,3 +84,8 @@ button  {
 .book:hover .book-over{
   transform: translateY(0%);
 }
+
+
+#resultat{
+  margin-top: 20px;
+}

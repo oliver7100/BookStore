@@ -50,6 +50,7 @@ function submitted(){
   <a href="/genre/kogebog">Kogebøger</a>
   <a href="/genre/biografi">Biografier</a>
   <a href="/genre/krimi">Krimier</a>
+  <a id="Login" href="/Login">Login</a>
   <div class="search-container">
   {MyForm()}
 
