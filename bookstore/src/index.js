@@ -1,4 +1,3 @@
-import { render } from "react-dom";
 import {
     BrowserRouter,
     Routes,
@@ -9,10 +8,14 @@ import BookView from "./Components/BookView";
 import Search from "./Components/Search";
 import Genre from "./Components/Genre";
 import Login from "./Components/Login";
+import ReactDOM from "react-dom";
+import React from "react";
+import CartState from "./context/cart/CartState";
 
 
 const rootElement = document.getElementById("root");
-render(
+ReactDOM.render(
+    <React.StrictMode>
     <BrowserRouter>
     <Routes>
         <Route path="/" element={<App />} />
@@ -31,6 +34,11 @@ render(
 
         />
     </Routes>
-    </BrowserRouter>,
-    rootElement
+    <CartState>
+        <App/> 
+    </CartState>
+    </BrowserRouter>
+    </React.StrictMode>,
+            rootElement
+
 );

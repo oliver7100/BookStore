@@ -1,7 +1,5 @@
-import React, { useEffect, useState} from "react";
-import { NavLink, Link } from 'react-router-dom';
+import React, { useState} from "react";
 import './header.css';
-import App from '../App';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -50,6 +48,7 @@ function submitted(){
   <a href="/genre/kogebog">Kogebøger</a>
   <a href="/genre/biografi">Biografier</a>
   <a href="/genre/krimi">Krimier</a>
+  <a href="#/cart">Cart</a>
   <a id="Login" href="/Login">Login</a>
   <div class="search-container">
   {MyForm()}

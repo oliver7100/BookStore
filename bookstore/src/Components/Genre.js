@@ -4,9 +4,8 @@ import Book from './Book'
 import Header from './Header'
 
 
-export default() => {
+const Genre = () => {
 const [books, setBooks] = useState([]);
-const [loading, setLoading] = useState(true);
 
 //Parameter for single fetch.
 const { genre } = useParams();
@@ -19,7 +18,6 @@ useEffect(() => {
         console.log(data);
         setBooks(data);
         //Loading is set to False, when the data has finished being fetched.
-        setLoading(false);
     })
 })
 
@@ -37,3 +35,5 @@ useEffect(() => {
 </>
     );
 }
+
+export default Genre;

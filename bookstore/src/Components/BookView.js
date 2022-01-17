@@ -1,15 +1,14 @@
-import React,{useEffect, useState} from "react";
+import React,{useEffect, useState, useContext} from "react";
 import { useParams } from "react-router-dom";
-import Book from './Book'
 import Header from './Header'
-import Styles from './bookview.css'
+import CartContext from "../context/cart/CartContext";
 
 
-export default() => {   
+const BookView = () => {   
+  const {addToCart} = useContext(CartContext);
 
 
 const [book, setBook] = useState([]);
-const [loading, setLoading] = useState(true);
 
 //Parameter for single fetch.
 const { id } = useParams();
@@ -26,7 +25,6 @@ useEffect(() => {
         setBook(data);
         console.log(book.title)
         //Loading is set to False, when the data has finished being fetched.
-        setLoading(false);
     })
 })
 
@@ -41,7 +39,7 @@ useEffect(() => {
 <div class="container">
   <div class="images">
     
-    <img id="imageCover" src={book.imageCover} />
+    <img id="imageCover" src={book.imageCover} alt="" />
  
   </div>
 
@@ -50,11 +48,16 @@ useEffect(() => {
     <h1 class="uppercase">{book.title}</h1>      
     <h2>{book.price} DKK</h2>
 
-    <img id="author" src={book.authorImage}></img>
+    <img id="author" src={book.authorImage} alt=""></img>
 
     <p class="desc"> {book.description}</p>
     <div class="buttons">
-      <button class="add">Tilføj til kurv</button>
+     <button
+          className='add'
+          onClick={() => addToCart(book)}
+        >
+          Add to basket
+        </button>
      
     </div>
   </div>
@@ -66,3 +69,5 @@ useEffect(() => {
 </>
     );
 }
+
+export default BookView;

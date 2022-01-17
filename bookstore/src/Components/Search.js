@@ -4,16 +4,14 @@ import Book from './Book'
 import Header from './Header'
 
 
-export default() => {
+const Search = () => {
 const [books, setBooks] = useState([]);
-const [loading, setLoading] = useState(true);
 const [resultat, setResultat]  = useState(true);
 
 //Parameter for single fetch.
 const { title } = useParams();
 const bookApiID = `/Books/(search)?title=${title}`;
 
-var isDataEmpty = "";
 
 useEffect(() => {
     fetch(bookApiID)
@@ -33,7 +31,6 @@ useEffect(() => {
         }
       
         //Loading is set to False, when the data has finished being fetched.
-        setLoading(false);
     })
 })
 
@@ -56,3 +53,5 @@ useEffect(() => {
 </>
     );
 }
+
+export default Search;
